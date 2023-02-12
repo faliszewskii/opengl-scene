@@ -1,4 +1,6 @@
 ## Running
+Install [Gradle](https://gradle.org/).
+
 Run `gradle run` in the root directory.
 
 ## Demo

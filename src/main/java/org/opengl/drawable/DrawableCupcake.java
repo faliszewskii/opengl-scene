@@ -12,7 +12,7 @@ import static org.lwjgl.glfw.GLFW.glfwGetTime;
 
 public class DrawableCupcake implements Drawable {
 
-    private Model objectModel;
+    private final Model objectModel;
 
     public DrawableCupcake(Model model) {
         objectModel = model;
@@ -33,6 +33,7 @@ public class DrawableCupcake implements Drawable {
         objectModel.draw(shader);
     }
 
+    @Override
     public Vector3f getPosition()  {
         return new Vector3f(1f,-1f,-3f);
     }

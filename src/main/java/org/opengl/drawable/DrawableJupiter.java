@@ -3,8 +3,11 @@ package org.opengl.drawable;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
 import org.lwjgl.system.MemoryStack;
+import org.opengl.config.Configuration;
 import org.opengl.model.Model;
 import org.opengl.shader.Shader;
+
+import java.util.Random;
 
 import static org.joml.Math.*;
 import static org.joml.Math.cos;
@@ -12,10 +15,15 @@ import static org.lwjgl.glfw.GLFW.glfwGetTime;
 
 public class DrawableJupiter implements Drawable {
 
-    private Model objectModel;
+    private final Model objectModel;
+    private final Random random;
 
-    public DrawableJupiter(Model model) {
+    private final Configuration configuration;
+
+    public DrawableJupiter(Model model, Configuration configuration) {
         objectModel = model;
+        random = new Random();
+        this.configuration = configuration;
     }
 
     @Override
@@ -34,10 +42,11 @@ public class DrawableJupiter implements Drawable {
         objectModel.draw(shader);
     }
 
+    @Override
     public Vector3f getPosition()  {
         return new Vector3f(
-                1.25f*sin((float)glfwGetTime()),
-                .5f + -0.5f* sin((float)glfwGetTime()),
-                1.25f*cos((float)glfwGetTime()));
+                1.25f*sin((float)glfwGetTime()) + random.nextFloat() * configuration.shakeFactor - configuration.shakeFactor/2f,
+                .5f + -0.5f* sin((float)glfwGetTime()) + random.nextFloat() * configuration.shakeFactor - configuration.shakeFactor/2f,
+                1.25f*cos((float)glfwGetTime()) + random.nextFloat() * configuration.shakeFactor - configuration.shakeFactor/2f);
     }
 }

@@ -13,9 +13,9 @@ import java.util.Random;
 public class DrawableStars implements Drawable {
 
     private final Random random;
-    private Model objectModel;
-    private int starCount;
-    private int shaderOffset;
+    private final Model objectModel;
+    private final int starCount;
+    private final int shaderOffset;
     public final List<Vector3f> lightPositions;
 
 
@@ -45,6 +45,7 @@ public class DrawableStars implements Drawable {
     public Vector3f getPosition(int i) {
         return lightPositions.get(i);
     }
+    @Override
     public Vector3f getPosition()  {
         return new Vector3f(0.f);
     }

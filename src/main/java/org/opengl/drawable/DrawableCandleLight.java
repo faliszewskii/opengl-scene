@@ -8,7 +8,7 @@ import org.opengl.shader.Shader;
 
 public class DrawableCandleLight implements Drawable {
 
-    private Model objectModel;
+    private final Model objectModel;
 
     public DrawableCandleLight(Model model) {
         objectModel = model;
@@ -25,6 +25,7 @@ public class DrawableCandleLight implements Drawable {
         objectModel.draw(shader);
     }
 
+    @Override
     public Vector3f getPosition()  {
         return new Vector3f(1f,-0.9f,-3f);
     }

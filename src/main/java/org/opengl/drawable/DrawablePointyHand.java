@@ -12,7 +12,7 @@ import static org.lwjgl.glfw.GLFW.glfwGetTime;
 
 public class DrawablePointyHand implements Drawable {
 
-    private Model objectModel;
+    private final Model objectModel;
 
     public DrawablePointyHand(Model model) {
         objectModel = model;
@@ -35,6 +35,7 @@ public class DrawablePointyHand implements Drawable {
         objectModel.draw(shader);
     }
 
+    @Override
     public Vector3f getPosition()  {
         return new Vector3f(
                 -2.25f*sin((float)glfwGetTime()),

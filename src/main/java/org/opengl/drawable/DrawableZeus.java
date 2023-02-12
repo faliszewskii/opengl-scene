@@ -12,7 +12,7 @@ import static org.lwjgl.glfw.GLFW.glfwGetTime;
 
 public class DrawableZeus implements Drawable {
 
-    private Model objectModel;
+    private final Model objectModel;
 
     public DrawableZeus(Model model) {
         objectModel = model;
@@ -32,7 +32,7 @@ public class DrawableZeus implements Drawable {
         shader.setBool("useDirectionalLight", true);
         objectModel.draw(shader);
     }
-    
+    @Override
     public Vector3f getPosition()  {
         return new Vector3f(
                 0.05f*sin(-(float)glfwGetTime()),

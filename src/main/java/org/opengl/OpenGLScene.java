@@ -16,8 +16,8 @@ public class OpenGLScene {
 
     // The window handle
     private long window;
-    private static final int WINDOW_WIDTH = 800;
-    private static final int WINDOW_HEIGHT = 600;
+    private static final int WINDOW_WIDTH = 1200;
+    private static final int WINDOW_HEIGHT = 900;
 
     public void run() throws IOException {
 

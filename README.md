@@ -1,3 +1,7 @@
+## Description
+
+A simple demonstration of OpenGL possibilities written in Java using lwjgl library presenting an abstract interactive animated scene.
+
 ## Running
 Install [Gradle](https://gradle.org/).
 
